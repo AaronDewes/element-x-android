@@ -140,6 +140,10 @@ gujun_span = "me.gujun.android:span:1.7"
 otaliastudios_transcoder = "com.otaliastudios:transcoder:0.10.5"
 vanniktech_blurhash = "com.vanniktech:blurhash:0.1.0"
 
+# Analytics
+posthog = "com.posthog.android:posthog:2.0.3"
+sentry_android = "io.sentry:sentry-android:6.17.0"
+
 # Di
 inject = "javax.inject:javax.inject:1"
 dagger = { module = "com.google.dagger:dagger", version.ref = "dagger" }
