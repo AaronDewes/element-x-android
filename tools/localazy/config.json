@@ -99,7 +99,7 @@
       ]
     },
     {
-      "name": ":services:analytics:impl",
+      "name": ":features:analytics:impl",
       "includeRegex": [
         "screen_analytics_.*"
       ]
