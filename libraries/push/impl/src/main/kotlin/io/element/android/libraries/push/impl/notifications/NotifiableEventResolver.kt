@@ -24,6 +24,7 @@ import io.element.android.libraries.matrix.api.core.RoomId
 import io.element.android.libraries.matrix.api.core.SessionId
 import io.element.android.libraries.matrix.api.core.UserId
 import io.element.android.libraries.matrix.api.notification.NotificationData
+import io.element.android.libraries.matrix.api.notification.NotificationEvent
 import io.element.android.libraries.push.impl.log.pushLoggerTag
 import io.element.android.libraries.push.impl.notifications.model.NotifiableEvent
 import io.element.android.libraries.push.impl.notifications.model.NotifiableMessageEvent
@@ -81,13 +82,13 @@ private fun NotificationData.asNotifiableEvent(userId: SessionId): NotifiableEve
         editedEventId = null,
         canBeReplaced = true,
         noisy = isNoisy,
-        timestamp = System.currentTimeMillis(),
+        timestamp = event.timestamp,
         senderName = senderDisplayName,
         senderId = senderId.value,
-        body = "Message ${eventId.value.take(8)}… in room ${roomId.value.take(8)}…",
-        imageUriString = null,
+        body = event.content,
+        imageUriString = event.contentUrl,
         threadId = null,
-        roomName = null,
+        roomName = roomDisplayName,
         roomIsDirect = false,
         roomAvatarPath = roomAvatarUrl,
         senderAvatarPath = senderAvatarUrl,
@@ -107,8 +108,19 @@ private fun NotificationData?.orDefault(roomId: RoomId, eventId: EventId): Notif
         eventId = eventId,
         senderId = UserId("@user:domain"),
         roomId = roomId,
+        senderAvatarUrl = null,
+        senderDisplayName = null,
+        roomAvatarUrl = null,
+        roomDisplayName = null,
         isNoisy = false,
         isEncrypted = false,
-        isDirect = false
+        isDirect = false,
+        event = NotificationEvent(
+            eventId = eventId,
+            senderId = UserId("@user:domain"),
+            timestamp = System.currentTimeMillis(),
+            content = "Message ${eventId.value.take(8)}… in room ${roomId.value.take(8)}…",
+            contentUrl = null
+        )
     )
 }
