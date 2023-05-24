@@ -89,7 +89,7 @@ private fun NotificationData.asNotifiableEvent(userId: SessionId): NotifiableEve
         imageUriString = event.contentUrl,
         threadId = null,
         roomName = roomDisplayName,
-        roomIsDirect = false,
+        roomIsDirect = isDirect,
         roomAvatarPath = roomAvatarUrl,
         senderAvatarPath = senderAvatarUrl,
         soundName = null,
