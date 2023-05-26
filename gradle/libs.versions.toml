@@ -174,5 +174,5 @@ dependencygraph = { id = "com.savvasdalkitsis.module-dependency-graph", version.
 dependencycheck = { id = "org.owasp.dependencycheck", version.ref = "dependencycheck" }
 paparazzi = "app.cash.paparazzi:1.2.0"
 sonarqube = "org.sonarqube:4.0.0.2929"
-kover = "org.jetbrains.kotlinx.kover:0.6.1"
+kover = "org.jetbrains.kotlinx.kover:0.7.0"
 sqldelight = { id = "com.squareup.sqldelight", version.ref = "sqldelight" }
