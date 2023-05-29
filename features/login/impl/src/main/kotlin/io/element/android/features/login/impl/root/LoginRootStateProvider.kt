@@ -33,7 +33,7 @@ open class LoginRootStateProvider : PreviewParameterProvider<LoginRootState> {
 }
 
 fun aLoginRootState() = LoginRootState(
-    homeserverDetails = MatrixHomeServerDetails("matrix.org", true, null),
+    homeserverDetails = MatrixHomeServerDetails("chat-server.ikgp.de", true, null),
     loggedInState = LoggedInState.NotLoggedIn,
     formState = LoginFormState.Default,
     eventSink = {}
