@@ -92,13 +92,13 @@ android {
 
     buildTypes {
         named("debug") {
-            resValue("string", "app_name", "ElementX dbg")
+            resValue("string", "app_name", "Kant-Chat Entwicklerversion")
             applicationIdSuffix = ".debug"
             signingConfig = signingConfigs.getByName("debug")
         }
 
         named("release") {
-            resValue("string", "app_name", "ElementX")
+            resValue("string", "app_name", "Kant-Chat")
             signingConfig = signingConfigs.getByName("debug")
 
             postprocessing {
@@ -115,7 +115,7 @@ android {
             initWith(release)
             applicationIdSuffix = ".nightly"
             versionNameSuffix = "-nightly"
-            resValue("string", "app_name", "ElementX nightly")
+            resValue("string", "app_name", "Kant-Chat Vorschau")
             matchingFallbacks += listOf("release")
             signingConfig = signingConfigs.getByName("nightly")
 
