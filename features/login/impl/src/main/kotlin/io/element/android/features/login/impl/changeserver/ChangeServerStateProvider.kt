@@ -24,14 +24,14 @@ open class ChangeServerStateProvider : PreviewParameterProvider<ChangeServerStat
     override val values: Sequence<ChangeServerState>
         get() = sequenceOf(
             aChangeServerState(),
-            aChangeServerState().copy(homeserver = "chat-server.ikgp.de"),
-            aChangeServerState().copy(homeserver = "chat-server.ikgp.de", changeServerAction = Async.Loading()),
+            aChangeServerState().copy(homeserver = "ikgp.de"),
+            aChangeServerState().copy(homeserver = "ikgp.de", changeServerAction = Async.Loading()),
             aChangeServerState().copy(
                 homeserver = "invalid.org",
                 changeServerAction = Async.Failure(ChangeServerError.InlineErrorMessage(R.string.screen_change_server_error_invalid_homeserver))
             ),
             aChangeServerState().copy(homeserver = "invalid.org", changeServerAction = Async.Failure(ChangeServerError.SlidingSyncAlert)),
-            aChangeServerState().copy(homeserver = "chat-server.ikgp.de", changeServerAction = Async.Success(Unit)),
+            aChangeServerState().copy(homeserver = "ikgp.de", changeServerAction = Async.Success(Unit)),
         )
 }
 
