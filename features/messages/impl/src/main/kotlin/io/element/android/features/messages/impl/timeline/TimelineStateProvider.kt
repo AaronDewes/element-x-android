@@ -32,8 +32,8 @@ import kotlinx.collections.immutable.ImmutableList
 import kotlinx.collections.immutable.persistentListOf
 import kotlin.random.Random
 
-fun aTimelineState() = TimelineState(
-    timelineItems = persistentListOf(),
+fun aTimelineState(timelineItems: ImmutableList<TimelineItem> = persistentListOf()) = TimelineState(
+    timelineItems = timelineItems,
     paginationState = MatrixTimeline.PaginationState(isBackPaginating = false, canBackPaginate = true),
     highlightedEventId = null,
     eventSink = {}
@@ -94,7 +94,7 @@ internal fun aTimelineItemEvent(
     eventId: EventId = EventId("\$" + Random.nextInt().toString()),
     isMine: Boolean = false,
     content: TimelineItemEventContent = aTimelineItemTextContent(),
-    groupPosition: TimelineItemGroupPosition = TimelineItemGroupPosition.First,
+    groupPosition: TimelineItemGroupPosition = TimelineItemGroupPosition.None,
     sendState: EventSendState = EventSendState.Sent(eventId),
 ): TimelineItem.Event {
     return TimelineItem.Event(
